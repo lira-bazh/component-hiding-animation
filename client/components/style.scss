@@ -1,0 +1,56 @@
+.blocks {
+  width: 100vw;
+  height: 100px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  .block {
+    background-color: blueviolet;
+    height: 100%;
+    padding: 10px;
+    color: #fff;
+  }
+  .block:not(:last-child) {
+    margin-right: 5px;
+  }
+  .show {
+    animation: show 1s 1 linear both;
+  }
+
+  .hide {
+    animation: hidden 1s 1 linear both;
+  }
+
+  @keyframes hidden {
+    0% {
+      opacity: 1;
+      width: 100%;
+    }
+    50% {
+      opacity: 0;
+      width: 100%;
+    }
+    100% {
+      opacity: 0;
+      width: 0;
+      padding: 0;
+      margin-right: 0;
+    }
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+      width: 0;
+    }
+    70% {
+      opacity: 0;
+      width: 100%;
+    }
+    100% {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+}
